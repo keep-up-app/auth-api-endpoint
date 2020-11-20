@@ -4,6 +4,7 @@
   "description": "Handles two factor authentication for KeepUp",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "watch": "nodemon index.js"
   },
   "repository": {

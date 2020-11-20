@@ -1,2 +1,2 @@
-# 2fa-api-endpoint
+# auth-api-endpoint
 Handles two factor authentication for KeepUp 

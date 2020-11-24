@@ -5,10 +5,35 @@
 const Speakeasy = require('speakeasy');
 
 module.exports = {
-    generateKey
+    generateSecret,
+    validateToken,
 };
 
 
-function generateKey() {
-    return Speakeasy.generateSecret();
+/**
+ * Generates secret for new user
+ * 
+ * @param {Int} length 
+ * @param {String} encoding 
+ */
+
+function generateSecret(length = 20, encoding = 'base32') {
+    return Speakeasy.generateSecret(length)[encoding];
+}
+
+
+/**
+ * Verifies Token against Secret
+ * 
+ * @param {String} secret 
+ * @param {String} token 
+ * @param {String} encoding 
+ */
+
+function validateToken(secret, token, encoding = 'base32') {
+    return Speakeasy.totp.verify({
+        secret,
+        token,
+        encoding
+    });
 }

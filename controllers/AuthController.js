@@ -34,6 +34,7 @@ function validateToken(secret, token, encoding = 'base32') {
     return Speakeasy.totp.verify({
         secret,
         token,
-        encoding
+        encoding,
+        window: 1
     });
 }

@@ -51,6 +51,7 @@ router.post('/generate/token/:encoding', (req, res) => {
     let encoding = req.params.encoding;
     let secret = req.body.secret;
     let token = AuthController.getTokenFromSecret(secret, encoding);
+    let remaining = token ? 30 - Math.floor(new Date().getTime() / 1000.00 % 30) : 0;
 
-    return res.json({ token: token });
+    return res.json({ token, remaining });
 });

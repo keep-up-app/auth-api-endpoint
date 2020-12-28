@@ -7,6 +7,7 @@ const Speakeasy = require('speakeasy');
 module.exports = {
     generateSecret,
     validateToken,
+    getTokenFromSecret
 };
 
 
@@ -36,5 +37,19 @@ function validateToken(secret, token, encoding = 'base32') {
         token,
         encoding,
         window: 1
+    });
+}
+
+
+/**
+ * Get token from secret
+ * 
+ * @param {String} secret
+ */
+
+function getTokenFromSecret(secret, encoding = 'base32') {
+    return Speakeasy.totp({
+        secret,
+        encoding,
     });
 }

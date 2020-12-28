@@ -36,7 +36,7 @@ function validateToken(secret, token, encoding = 'base32') {
         secret,
         token,
         encoding,
-        window: 1
+        window: 6
     });
 }
 

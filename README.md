@@ -11,7 +11,7 @@ This endpoint is utilized by: [user endpoint][user-repo], [register endpoint][re
 
 ##### Description: generates new secret
 
-> * http verb: *`POST`*
+> * http verb: *`GET`*
 > * reponse code: `200`
 > * response type: *JSON*
 >
